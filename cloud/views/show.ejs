@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="renderer" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0" />
+		<title>快来试试你的工资像神马山...</title>
+		<style type="text/css">
+			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,iframe,button,a{
+			margin:0;
+			padding:0;
+			line-height: 1.5em;
+			}
+			.fl{float:left;display:inline;}
+			.fr{float:right;display:inline;}
+			.cf{display:block;zoom:1;}
+			* html .cf{height:1%;}
+			.cf:after{content:" ";display:block;height:0;clear:both;visibility:hidden;}
+
+			.content_wrap{
+				margin:0 auto;
+				width:96%;
+			}
+
+			.salary_input{
+				background: #ccc;
+				padding: 5px 0 5px 5px;
+			}
+
+			.num_wrap{
+				width: 25%;
+				box-sizing:border-box;
+				height:0px;
+				padding-right: 5px;
+				
+			}
+
+			.num_a{
+				display: none;
+				height: 100%;
+				background: #f5f5f5;
+				text-align: center;
+				font-size:40px;
+				color:#fff;
+				text-decoration: none;
+			}
+
+			.num_a:last-child{
+
+			}
+
+			.row{
+				margin-bottom:5px;
+			}
+
+			.row:last-child{
+				margin-bottom: 0;
+			}
+
+			.start_btn_wrap a{
+				display: block;
+				width: 50%;
+				margin:20px auto 10px;
+				background-color: #555555;
+				-webkit-border-radius: 10px;
+	  			-moz-border-radius: 10px;
+				border-radius: 10px;
+				color:#fff;
+				font-size: 24px;
+				line-height: 40px;
+				text-align: center;
+				text-decoration: none;
+			}
+
+			.finish_btn_wrap a{
+				display: block;
+				width: 45%;
+				color:#fff;
+				line-height: 40px;
+				font-size: 20px;
+				-webkit-border-radius: 10px;
+	  			-moz-border-radius: 10px;
+				border-radius: 10px;
+				text-align: center;
+				text-decoration: none;
+				margin-top: 20px;
+			}
+
+			.finish{
+				background-color: #7ed0a5;
+			}
+
+			.finish_btn_wrap .cancel{
+				background-color: #555;
+			}
+
+			.center{
+				text-align: center;
+			}
+
+			#remainTime{
+				font-size:16px;
+				color:#444;
+			}
+
+			.salary_and_time{
+				width:100%;
+				display: block;
+			}
+
+			input{
+				display: block;
+				width: 90%;
+				margin:0 auto;
+			}
+
+			.label{
+				width: 90%;
+				margin:15px auto 0;
+			}
+
+			.step2_finish_btn{
+				display: block;
+				width: 60%;
+				color:#fff;
+				line-height: 40px;
+				font-size: 20px;
+				-webkit-border-radius: 10px;
+				background-color: #17b1f1;
+	  			-moz-border-radius: 10px;
+				border-radius: 10px;
+				text-align: center;
+				text-decoration: none;
+				margin: 50px auto 0;
+			}
+
+			.work_year_input{
+				width: 70%;
+				margin: 0 auto;
+			}
+
+			.work_year_input a{
+				text-align: center;
+				width: 30%;
+				text-decoration: none;
+				display: block;
+				font-size: 24px;
+				color:#555;
+			}
+
+			.step1_time{
+				margin-top: 50px;
+			}
+
+			.work_year_wrap{
+				width:40%;
+				font-size: 24px;
+			}
+
+			.step3_title{
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_wrap">
+			<div style="display:none;"><img src="http://ac-qg7iyj4o.qiniudn.com/YF0LHfBcEMOGweegB2RkxYrUSL59O2Ic6Y8R1cy1.png"/></div>
+			<div id="salary_wrap">
+				<div class="center" style="color:#333;font-size:24px;margin-top:10px;">试试你的工资像神马山</div>
+				<div style="color:#444;font-size:16px">看看你能有多快填完你的月薪</div>
+				<div class="salary_and_time cf">
+					<div class="salary_input_result fl">你的薪水：<span class="salary_span"></span></div>
+					<div id="remainTime" class="fr">计时：0分0秒</div>
+				</div>
+				
+				<div class="salary_input">
+					<div class="row cf">
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+					</div>
+
+					<div class="row cf">
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+					</div>
+
+					<div class="row cf">
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+					</div>
+
+					<div class="row cf">
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+						<div class="num_wrap fl"><a class="num_a" href="javascript:;"></a></div>
+					</div>
+					
+				</div>
+
+				<div class="start_btn_wrap">
+					<a href="javascript:;">立刻开始</a>
+					<div class="center" style="margin-bottom:10px;">(我们有节操，绝对会保密)</div>
+				</div>
+				<div class="finish_btn_wrap" style="display:none;">
+					<a class="finish fl">填好了</a>
+					<a class="cancel fr">写错了，重来</a>
+				</div>
+			</div>
+
+			<div id="job_wrap" style="display:none;">
+				<div class="center step1_time">太牛逼了</div>
+				<div class="center step1_result">你的薪资战胜了该应用中89%的人</div>
+				<div class="center">想知道你在同行业中的薪资水平么？</div>
+				<div class="label">我的职业</div>
+				<input type="text" id="job_input" value=""/>
+				<div class="label">工作年限</div>
+				<div class="work_year_input">
+					<a class="minus fl" href="javascript:;">-</a>
+					<div class="work_year_wrap center fl"><span class="work_year">1</span>年</div>
+					<a class="plus fl" href="javascript:;">+</a>
+				</div>
+				<a class="step2_finish_btn" href="javascript:;">求解答</a>
+			</div>
+
+			<div id="result_wrap" style="display:none;">
+				<div class="center step3_title">你战胜了该应用90%的从事的人员</div>
+				<div class="center">经测算</div>
+				<div class="center step3_mountain">你的薪资像珠穆朗玛峰一样，明年会更牛逼</div>
+				<div class="center">点击右上方，分享到朋友圈</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+						async:true,
+						url:'http://shaigongzi.avosapps.com/anony-user',
+						dataType:'json',
+						type:'get',
+						beforeSend: function (xhr) {
+							 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+						},
+						context:$(this),
+						success:function(json){
+							if(json.success){
+								
+							}
+						}
+					});
+
+				var colorArray = ["#6fa4a2","#404650","#9bb241","#F3FFA6",
+            "#FFBB7A","#00cfee","#f3c503","#ffc703","#637b4b","#f0371e","#369de1","#fda74a",
+            "#a27fba","#b2dfee","#5a4c4c","#a9a9a9"];
+
+				$('.num_wrap').each(function(){
+					$(this).height($(this).width());
+					$(this).find('a').css('line-height',$(this).width() + 'px').css('display','block').show();
+				});
+
+				setTimeout(function(){
+					$('.salary_input').show();
+				},1000);
+
+				function getRandomNum(max){
+					var randomNumber = parseInt(Math.random() * max);
+					return randomNumber;
+				}
+
+				function resetSquare(){
+					$('.num_a').each(function(){
+						$(this).text('');
+					});
+					for(var i = 0;i < 10;i++){
+						var randomNumber = getRandomNum(16);
+						while($('.num_a:eq('+ randomNumber +')').text() != '') {
+							randomNumber = getRandomNum(16);
+						}
+						$('.num_a:eq('+ randomNumber +')').text(i);
+					}
+				}
+
+				// resetSquare();
+
+				function resetSquareColor(){
+					$('.num_a').each(function(){
+						var randomNumber = getRandomNum(16);
+						$(this).css('background-color',colorArray[randomNumber]);
+					});
+				}
+
+				// resetSquareColor();
+
+				$('.start_btn_wrap a').click(function(){
+					$('.start_btn_wrap').hide();
+					$('.finish_btn_wrap').show();
+					resetSquare();
+					resetSquareColor();
+					startCountTime();
+				});
+
+				var SysSecond;
+		        var InterValObj;
+		        var finalTime = 0;
+		        var salary = 0;
+				
+	            function startCountTime(){
+	            	var oldTime = (new Date()).getTime();//在此处写出你的时间
+			        var newTime = (new Date()).getTime();
+			        time=newTime-oldTime;
+			        time=time/1000;
+
+			        
+		            SysSecond = parseInt(-time); //这里获取倒计时的起始时间
+		            InterValObj = setInterval(SetRemainTime, 1000); //间隔函数，1秒执行
+	            }
+
+		         //将时间减去1秒，计算天、时、分、秒
+		        function SetRemainTime() {
+		            SysSecond = SysSecond - 1;
+		            var second = Math.floor((-SysSecond) % 60);              // 计算秒        
+		            var minite = Math.floor(((-SysSecond) / 60) % 60);      //计算分
+		            var hour = Math.floor((-(SysSecond) / 3600) % 24);      ///计算小时
+		            var day = Math.floor(((-SysSecond) / 3600) / 24);        //计算天
+		           $("#remainTime").html('正在计时：' + minite + "分" + second + "秒");
+		           finalTime = minite*60 + second;
+		        }
+
+		        $('.finish_btn_wrap .cancel').click(function(){
+		        	clearInterval(InterValObj);
+		        	$('#remainTime').html('正在计时：0分0秒');
+		        	$('.salary_span').text('');
+		        	resetSquare();
+					resetSquareColor();
+					startCountTime();
+		        });
+
+		        $('.num_a').click(function(){
+		        	if($(this).text() != ''){
+		        		$('.salary_span').append($(this).text());
+		        	}
+		        });
+
+		        $('.finish_btn_wrap .finish').click(function(){
+		        	if(parseInt($('.salary_span').text()) > 0){
+		        		clearInterval(InterValObj);
+		        		$('#salary_wrap').hide();
+		        		$('#job_wrap').show();
+		        		$('.step1_time').text('你太牛逼了，才用了'+ finalTime + '秒');
+
+		        		salary = parseInt($('.salary_span').text());
+		        		if(salary  < 3000){
+		        			$('.step1_result').text('你的薪资有点凄惨，还得继续努力～');
+
+		        		}
+		        		else if(salary < 5000){
+		        			$('.step1_result').text('你的薪资战胜了该应用中38%的人');
+		        		}
+		        		else if(salary < 8000){
+		        			$('.step1_result').text('你的薪资战胜了该应用中57%的人');
+		        		}
+		        		else if(salary < 12000){
+		        			$('.step1_result').text('你的薪资战胜了该应用中66%的人');
+		        		}
+		        		else if(salary < 16000){
+		        			$('.step1_result').text('你的薪资战胜了该应用中79%的人');
+		        		}
+		        		else if(salary < 20000){
+		        			$('.step1_result').text('你的薪资战胜了该应用中83%的人');
+		        		}
+		        		else if(salary < 50000){
+		        			$('.step1_result').text('你的薪资战胜了该应用中94%的人');
+		        		}
+		        		else{
+		        			$('.step1_result').text('你的薪资战胜了该应用中99%的人');
+		        		}
+		        	}
+		        	else{
+		        		resetSquare();
+		        		resetSquareColor();
+		        	}
+		        });
+
+		        $('.step2_finish_btn').click(function(){
+		        	if($('#job_input').val() == ''){
+		        		$('#job_input').stop(false, true)
+							.css('background','#f5cfcf')
+							.animate({opacity: 0.3}, 300, function(){
+								$('#job_input').css('background','#ffffff').css('opacity', '1');
+							});
+						return false;
+		        	}
+
+		        	var jobName = $('#job_input').val();
+		        	var mountailName = '';
+		        	if(salary  < 3000){
+	        			$('.step3_title').text('还是不告诉你结果了，仍需努力啊');
+	        			$('.step3_mountain').text('你的薪资像庐山一样，明年会更牛逼');
+	        			mountailName = '庐山';
+	        		}
+	        		else if(salary < 5000){
+	        			$('.step3_title').text('你战胜了该应用26%的从事'+ jobName +'的人员');
+	        			$('.step3_mountain').text('你的薪资像泰山一样，明年会更牛逼');
+	        			mountailName = '泰山';
+	        		}
+	        		else if(salary < 8000){
+	        			$('.step3_title').text('你战胜了该应用45%的从事'+ jobName +'的人员');
+	        			$('.step3_mountain').text('你的薪资像阿里山一样，明年会更牛逼');
+	        			mountailName = '阿里山';
+	        		}
+	        		else if(salary < 12000){
+	        			$('.step3_title').text('你战胜了该应用64%的从事'+ jobName +'的人员');
+	        			$('.step3_mountain').text('你的薪资像比利牛斯山一样，明年会更牛逼');
+	        			mountailName = '比利牛斯山';
+	        		}
+	        		else if(salary < 16000){
+	        			$('.step3_title').text('你战胜了该应用71%的从事'+ jobName +'的人员');
+	        			$('.step3_mountain').text('你的薪资像富士山一样，明年会更牛逼');	
+	        			mountailName = '富士山';
+	        		}
+	        		else if(salary < 20000){
+	        			$('.step3_title').text('你战胜了该应用82%的从事'+ jobName +'的人员');
+	        			$('.step3_mountain').text('你的薪资像乞力马扎罗山一样，明年会更牛逼');
+	        			mountailName = '乞力马扎罗山';
+	        		}
+	        		else if(salary < 50000){
+	        			$('.step3_title').text('你战胜了该应用90%的从事'+ jobName +'的人员');
+	        			$('.step3_mountain').text('你的薪资像共产主义峰一样，明年会更牛逼');
+	        			mountailName = '共产主义峰';
+	        		}
+	        		else{
+	        			$('.step3_title').text('你战胜了该应用99%的从事'+ jobName +'的人员');
+	        			$('.step3_mountain').text('你的薪资像珠穆朗玛峰一样，明年会更牛逼');
+	        			mountailName = '珠穆朗玛峰';
+	        		}
+
+		        	$('#job_wrap').hide();
+		        	$('#result_wrap').show();
+		        	document.title = '才' + finalTime + '秒，我的工资像'+ mountailName +'。快来试试你的工资像神马山...';
+
+		        	$.ajax({
+						async:true,
+						url:'http://shaigongzi.avosapps.com/weixin?job='+ jobName +'&salary=' + salary + '&workYear='+$('.work_year').text(),
+						dataType:'json',
+						type:'get',
+						beforeSend: function (xhr) {
+							 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+						},
+						context:$(this),
+						success:function(json){
+							if(json.success){
+								
+							}
+						}
+					});
+					return false;
+		        });
+
+		        $('.minus').click(function(){
+		        	if(parseInt($('.work_year').text()) > 1){
+		        		$('.work_year').text(parseInt($('.work_year').text())-1);
+		        	}
+		        });
+
+		        $('.plus').click(function(){
+		        	if(parseInt($('.work_year').text()) < 30){
+		        		$('.work_year').text(parseInt($('.work_year').text())+1);
+		        	}
+		        });
+			});
+		</script>
+	</body>
+</html>
